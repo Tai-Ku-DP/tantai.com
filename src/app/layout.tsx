@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "// PTT — Portfolio",
+  title: "Phan Tấn Tài — Full-stack Engineer",
   description:
-    "Phan Tấn Tài — Full-stack engineer with 3+ years of experience building modern web and mobile applications.",
+    "Phan Tấn Tài — Full-stack engineer with 2.5+ years of experience building modern web and mobile applications.",
   metadataBase: new URL("https://tantai-developer.vercel.app"),
   openGraph: {
     title: "Phan Tấn Tài — Fullstack Engineer",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "Phan Tấn Tài",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://tantai-developer.vercel.app/og-image.png",
         width: 1200,
         height: 630,
         alt: "Phan Tấn Tài — Fullstack Engineer",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "Phan Tấn Tài — Fullstack Engineer",
     description:
       "Full-stack engineer with 3+ years of experience building modern web and mobile applications.",
-    images: ["/og-image.png"],
+    images: ["https://tantai-developer.vercel.app/og-image.png"],
   },
 };
 
