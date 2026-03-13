@@ -11,14 +11,14 @@ export type WorkEntry = {
 
 export const workHistory: WorkEntry[] = [
   {
-    title: "Lead Front-end Engineer",
+    title: "Junior Full-stack Engineer",
     company: "Simplamo Vietnam (Technology Company)",
     flag: "🇻🇳",
     country: "Vietnam",
     type: "Full-Time",
     period: "Mar 2023 – Present",
     bullets: [
-      "Built Tree & Gantt views features to improve goal organization, visibility, and progress tracking.",
+      "Developed and maintained web and mobile applications using ReactJS (Next.js), and ReactNative.",
       "Developed [AI Chat](https://simplamo.com/features/ai-chat) and [AI Assistant](https://simplamo.com/features/ai-assistant) features.",
       "Developed Whiteboards with real-time collaboration.",
       "Built and maintained the Zalo Mini App for Simplamo with seamless integration.",

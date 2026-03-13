@@ -5,6 +5,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import { Github, Moon } from "lucide-react";
+import { useEffect, useState } from "react";
 
 // Dynamically imported with ssr:false to avoid Sun/Moon hydration mismatch
 const ThemeToggle = dynamic(() => import("./ThemeToggle"), {
@@ -18,6 +19,13 @@ const ThemeToggle = dynamic(() => import("./ThemeToggle"), {
 
 export default function Header() {
   const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <header
@@ -28,7 +36,16 @@ export default function Header() {
       }}
     >
       <div className="max-w-2xl mx-auto px-6 h-12 flex items-center justify-between">
-        <Link href="/" className="hover:opacity-70 transition-opacity">
+        <Link
+          href="/"
+          className="hover:opacity-70 transition-opacity"
+          style={{
+            opacity: scrolled ? 1 : 0,
+            transform: scrolled ? "translateY(0)" : "translateY(-6px)",
+            transition: "opacity 0.3s ease, transform 0.3s ease",
+            pointerEvents: scrolled ? "auto" : "none",
+          }}
+        >
           <Image
             src="/logo-black.png"
             alt="PTT"
