@@ -7,9 +7,9 @@ import { skills } from "@/data/skills";
 import { workHistory } from "@/data/work";
 
 export const metadata: Metadata = {
-  title: "// PTT — Phan Tấn Tài",
+  title: "Tấn Tài - Fullstack Engineer",
   description:
-    "Phan Tấn Tài — Full-stack engineer with 8+ years of experience building modern web applications.",
+    "Phan Tấn Tài — Fullstack engineer with 3+ years of experience building modern web and mobile applications.",
 };
 
 function SectionLabel({ children }: { children: React.ReactNode }) {

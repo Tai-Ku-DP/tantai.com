@@ -31,10 +31,6 @@ export default function ProfileCover({
         className="w-full rounded-lg overflow-hidden relative flex items-center justify-center"
         style={{
           height: 180,
-          backgroundColor: "var(--surface)",
-          backgroundImage:
-            "radial-gradient(circle, var(--border) 1.2px, transparent 1.2px)",
-          backgroundSize: "22px 22px",
         }}
       >
         <AppleHelloVietnameseEffect

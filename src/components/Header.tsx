@@ -34,7 +34,7 @@ export default function Header() {
             alt="PTT"
             width={40}
             height={40}
-            // className="dark:invert"
+            style={{ filter: "invert(var(--icon-invert))" }}
           />
         </Link>
 
