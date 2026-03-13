@@ -7,14 +7,14 @@ type Theme = "dark" | "light";
 const ThemeContext = createContext<{
   theme: Theme;
   toggle: () => void;
-}>({ theme: "dark", toggle: () => {} });
+}>({ theme: "light", toggle: () => {} });
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   // Read from DOM — inline script in layout.tsx already set the correct class
   // before React hydrates, so document.documentElement.classList is accurate.
   // Always returns "dark" on server (no document), matching the html className="dark" default.
   const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof document === "undefined") return "dark";
+    if (typeof document === "undefined") return "light";
     return document.documentElement.classList.contains("dark") ? "dark" : "light";
   });
 

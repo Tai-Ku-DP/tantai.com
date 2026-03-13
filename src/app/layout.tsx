@@ -19,12 +19,12 @@ export const metadata: Metadata = {
   title: "// PTT — Portfolio",
   description:
     "Phan Tấn Tài — Full-stack engineer with 3+ years of experience building modern web and mobile applications.",
-  metadataBase: new URL("https://phantantai.com"),
+  metadataBase: new URL("https://tantai-developer.vercel.app"),
   openGraph: {
     title: "Phan Tấn Tài — Fullstack Engineer",
     description:
       "Full-stack engineer with 3+ years of experience building modern web and mobile applications.",
-    url: "https://phantantai.com",
+    url: "https://tantai-developer.vercel.app",
     siteName: "Phan Tấn Tài",
     images: [
       {
@@ -52,12 +52,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* Inline script to apply saved theme before React hydrates — prevents flash */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.classList.remove('dark');document.documentElement.style.colorScheme='light';}else{document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark';}}catch(e){}})();`,
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark';}else{document.documentElement.classList.remove('dark');document.documentElement.style.colorScheme='light';}}catch(e){}})();`,
           }}
         />
       </head>

@@ -20,8 +20,8 @@ export default function ContactPage() {
           {
             icon: <Mail size={14} />,
             label: "Email",
-            value: "hello@phantantai.com",
-            href: "mailto:hello@phantantai.com",
+            value: "tantai.development@gmail.com",
+            href: "mailto:tantai.development@gmail.com",
           },
           {
             icon: <Github size={14} />,

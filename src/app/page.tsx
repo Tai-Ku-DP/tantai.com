@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
-import { Mail, FileDown, Phone, MapPin, Clock, Cake, Link as LinkIcon } from "lucide-react";
+import {
+  Mail,
+  FileDown,
+  Phone,
+  MapPin,
+  Clock,
+  Cake,
+  Link as LinkIcon,
+} from "lucide-react";
 import ProfileCover from "@/components/ProfileCover";
 import SkillBadge from "@/components/SkillBadge";
 import WorkItem from "@/components/WorkItem";
@@ -108,8 +116,8 @@ export default function HomePage() {
           <InfoRow icon={<Cake size={14} />} label="01/06/2004" />
           <InfoRow
             icon={<LinkIcon size={14} />}
-            label="tantai.com"
-            href="https://tantai.com"
+            label="tantai-developer.vercel.app"
+            href="https://tantai-developer.vercel.app/"
           />
         </div>
       </div>
