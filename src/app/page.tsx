@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mail, Github, Twitter, Linkedin, FileDown } from "lucide-react";
+import { Mail, FileDown, Phone, MapPin, Clock } from "lucide-react";
 import ProfileCover from "@/components/ProfileCover";
 import SkillBadge from "@/components/SkillBadge";
 import WorkItem from "@/components/WorkItem";
@@ -13,18 +13,51 @@ export const metadata: Metadata = {
 };
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
-  return (
-    <p
-      className="text-[10px] tracking-[0.14em] uppercase font-medium mb-4"
-      style={{ color: "var(--faint)" }}
-    >
-      {children}
-    </p>
-  );
+  return <p className="uppercase font-medium mb-4">{children}</p>;
 }
 
 function Divider() {
-  return <div className="my-8 border-t border-gray-200" />;
+  return <div className="my-4 border-t border-gray-200" />;
+}
+
+function InfoRow({
+  icon,
+  label,
+  href,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  href?: string;
+}) {
+  const content = (
+    <span className="flex items-center gap-2.5 py-0.5">
+      <span style={{ color: "var(--faint)" }} className="shrink-0">
+        {icon}
+      </span>
+      <span style={{ color: "var(--muted-fg)" }}>{label}</span>
+    </span>
+  );
+  if (href) {
+    return (
+      <a
+        href={href}
+        target={
+          href.startsWith("mailto:") || href.startsWith("tel:")
+            ? undefined
+            : "_blank"
+        }
+        rel={
+          href.startsWith("mailto:") || href.startsWith("tel:")
+            ? undefined
+            : "noopener noreferrer"
+        }
+        className="transition-opacity hover:opacity-70"
+      >
+        {content}
+      </a>
+    );
+  }
+  return content;
 }
 
 export default function HomePage() {
@@ -37,9 +70,11 @@ export default function HomePage() {
         avatarSize={100}
       />
 
-      <h1 className="text-2xl font-bold mb-3" style={{ color: "var(--fg)" }}>
+      <h1 className="text-xl font-bold mb-3" style={{ color: "var(--fg)" }}>
         Hey, I&apos;m{" "}
-        <span style={{ color: "var(--accent)" }}>Phan Tấn Tài</span>!
+        <span className="text-(--accent) border-b-2 border-(--accent) pb-[2px]">
+          Phan Tấn Tài
+        </span>
       </h1>
 
       <div
@@ -48,7 +83,7 @@ export default function HomePage() {
       >
         <p>A full-stack engineer based in Việt Nam 🇻🇳</p>
         <p>
-          I specialize in building web applications with{" "}
+          I specialize in web and mobile apps with{" "}
           <span
             className="inline-flex items-center gap-1 px-1 py-0.5 rounded text-xs font-medium"
             style={{
@@ -105,48 +140,35 @@ export default function HomePage() {
         </p>
       </div>
 
-      {/* CTA buttons */}
-      <div className="flex flex-wrap items-center gap-3 mb-4">
-        <a
-          href="mailto:tantai.development@gmail.com"
-          className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-medium rounded-md transition-opacity hover:opacity-80"
-          style={{
-            color: "var(--fg)",
-            backgroundColor: "var(--surface)",
-            border: "1px solid var(--border)",
-          }}
-        >
-          <Mail size={12} />
-          Send an email
-        </a>
-        <a
-          href="/resume.pdf"
-          className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-medium rounded-md transition-opacity hover:opacity-80"
-          style={{
-            color: "var(--muted)",
-            backgroundColor: "var(--surface)",
-            border: "1px solid var(--border)",
-          }}
-        >
-          <FileDown size={12} />
-          Download CV
-        </a>
+      {/* ── Info Grid ─────────────────────────────── */}
+      <div className="rounded-lg  mb-4 font-mono text-xs">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
+          <InfoRow
+            icon={<MapPin size={14} />}
+            label="Ho Chi Minh City, Viet Nam"
+          />
+          <InfoRow icon={<Clock size={14} />} label="GMT+7" />
+          <InfoRow
+            icon={<Phone size={14} />}
+            label="+84 338168704"
+            href="tel:+84123456789"
+          />
+          <InfoRow
+            icon={<Mail size={14} />}
+            label="tantai.development@gmail.com"
+            href="mailto:tantai.development@gmail.com"
+          />
+        </div>
       </div>
 
       <Divider />
 
       {/* ── Tech Stack ───────────────────────────────── */}
-      <section
-        className="rounded-lg p-5"
-        style={{
-          border: "1px solid var(--border)",
-          backgroundColor: "var(--surface)",
-        }}
-      >
-        <SectionLabel>Tech Stack</SectionLabel>
-        <p className="text-xs mb-4 font-mono" style={{ color: "var(--muted)" }}>
-          The tech stack I use for my personal and client work:
-        </p>
+      <section>
+        <h1 className="text-xl font-bold mb-3" style={{ color: "var(--fg)" }}>
+          Stack
+        </h1>
+
         <div className="flex flex-wrap gap-2">
           {skills.map((skill) => (
             <SkillBadge key={skill.name} {...skill} />
@@ -157,65 +179,14 @@ export default function HomePage() {
       <Divider />
 
       {/* ── Work History ─────────────────────────────── */}
-      <section
-        className="rounded-lg p-5"
-        style={{
-          border: "1px solid var(--border)",
-          backgroundColor: "var(--surface)",
-        }}
-      >
-        <SectionLabel>Work History</SectionLabel>
-        <p className="text-xs mb-6 font-mono" style={{ color: "var(--muted)" }}>
-          My professional experience over the past 8+ years:
-        </p>
+      <section>
+        <h1 className="text-xl font-bold mb-3" style={{ color: "var(--fg)" }}>
+          Experience
+        </h1>
+
         <div>
           {workHistory.map((entry, i) => (
             <WorkItem key={i} {...entry} />
-          ))}
-        </div>
-      </section>
-
-      <Divider />
-
-      {/* ── Find me on ───────────────────────────────── */}
-      <section>
-        <SectionLabel>Find me on</SectionLabel>
-        <p className="text-xs mb-4 font-mono" style={{ color: "var(--muted)" }}>
-          You can find me on the following social platforms:
-        </p>
-        <div className="flex flex-wrap gap-2">
-          {[
-            {
-              href: "https://x.com/phantantai",
-              label: "X / Twitter",
-              icon: <Twitter size={12} />,
-            },
-            {
-              href: "https://github.com/phantantai",
-              label: "GitHub",
-              icon: <Github size={12} />,
-            },
-            {
-              href: "https://linkedin.com/in/phantantai",
-              label: "LinkedIn",
-              icon: <Linkedin size={12} />,
-            },
-          ].map(({ href, label, icon }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-3 py-1.5 text-xs rounded-md transition-opacity hover:opacity-70"
-              style={{
-                color: "var(--muted-fg)",
-                backgroundColor: "var(--surface)",
-                border: "1px solid var(--border)",
-              }}
-            >
-              {icon}
-              {label}
-            </a>
           ))}
         </div>
       </section>

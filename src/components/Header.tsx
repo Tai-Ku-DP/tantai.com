@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
-import { Twitter, Github, Moon } from "lucide-react";
+import { Github, Moon } from "lucide-react";
 
 // Dynamically imported with ssr:false to avoid Sun/Moon hydration mismatch
 const ThemeToggle = dynamic(() => import("./ThemeToggle"), {
@@ -63,16 +63,7 @@ export default function Header() {
             style={{ color: "var(--muted)" }}
           >
             <a
-              href="https://x.com/phantantai"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Twitter/X"
-              className="hover:opacity-70 transition-opacity"
-            >
-              <Twitter size={13} />
-            </a>
-            <a
-              href="https://github.com/phantantai"
+              href="https://github.com/Tai-Ku-DP/tantai.com"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"

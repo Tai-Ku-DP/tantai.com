@@ -13,6 +13,7 @@
   --subtle: #d4d4d8;
   --accent: #f5a623;
   --bg-alpha: rgba(250, 250, 250, 0.9);
+  --icon-invert: 0;
 }
 
 /* Dark mode */
@@ -28,6 +29,7 @@
   --subtle: #3a3a3a;
   --accent: #f5a623;
   --bg-alpha: rgba(10, 10, 10, 0.9);
+  --icon-invert: 1;
 }
 
 body {

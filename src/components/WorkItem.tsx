@@ -1,5 +1,28 @@
 import type { WorkEntry } from "@/data/work";
 
+function parseBullet(text: string): React.ReactNode {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  if (parts.length === 1) return text;
+  return parts.map((part, i) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (match) {
+      return (
+        <a
+          key={i}
+          href={match[2]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-2 transition-opacity hover:opacity-70"
+          style={{ color: "var(--fg)" }}
+        >
+          {match[1]}
+        </a>
+      );
+    }
+    return part;
+  });
+}
+
 export default function WorkItem({
   title,
   company,
@@ -23,17 +46,14 @@ export default function WorkItem({
       <div className="pb-8 flex-1 min-w-0">
         {/* Title */}
         <h3
-          className="text-sm font-semibold leading-snug"
+          className="text-base font-semibold leading-snug"
           style={{ color: "var(--fg)" }}
         >
           {title}
         </h3>
 
         {/* Company + meta */}
-        <div
-          className="flex flex-wrap items-center gap-x-2 gap-y-0.5 mt-0.5 text-xs"
-          style={{ color: "var(--muted)" }}
-        >
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 mt-0.5 text-sm">
           {companyUrl ? (
             <a
               href={companyUrl}
@@ -50,30 +70,24 @@ export default function WorkItem({
             </span>
           )}
           <span>•</span>
-          <span>
-            {flag} {country}
-          </span>
-          <span>•</span>
-          <span>{type}</span>
+          <span>{period}</span>
         </div>
-
-        {/* Period */}
-        <p className="text-xs mt-0.5" style={{ color: "var(--faint)" }}>
-          {period}
-        </p>
 
         {/* Bullets */}
         <ul className="mt-2.5 space-y-1">
           {bullets.map((bullet, i) => (
             <li
               key={i}
-              className="flex gap-2 text-xs leading-relaxed"
+              className="flex gap-2 leading-relaxed text-sm"
               style={{ color: "var(--muted-fg)" }}
             >
-              <span className="mt-0.5 shrink-0" style={{ color: "var(--subtle)" }}>
+              <span
+                className="mt-0.5 shrink-0"
+                style={{ color: "var(--subtle)" }}
+              >
                 •
               </span>
-              <span>{bullet}</span>
+              <span>{parseBullet(bullet)}</span>
             </li>
           ))}
         </ul>
