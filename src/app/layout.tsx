@@ -18,7 +18,32 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "// PTT — Portfolio",
   description:
-    "Phan Tấn Tài — Full-stack engineer with 8+ years of experience building web applications.",
+    "Phan Tấn Tài — Full-stack engineer with 3+ years of experience building modern web and mobile applications.",
+  metadataBase: new URL("https://phantantai.com"),
+  openGraph: {
+    title: "Phan Tấn Tài — Fullstack Engineer",
+    description:
+      "Full-stack engineer with 3+ years of experience building modern web and mobile applications.",
+    url: "https://phantantai.com",
+    siteName: "Phan Tấn Tài",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Phan Tấn Tài — Fullstack Engineer",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Phan Tấn Tài — Fullstack Engineer",
+    description:
+      "Full-stack engineer with 3+ years of experience building modern web and mobile applications.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({

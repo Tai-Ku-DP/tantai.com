@@ -11,22 +11,20 @@ export type WorkEntry = {
 
 export const workHistory: WorkEntry[] = [
   {
-    title: "Junior Full-stack Engineer",
+    title: "Full-stack Engineer",
     company: "Simplamo Vietnam (Technology Company)",
     flag: "🇻🇳",
     country: "Vietnam",
     type: "Full-Time",
-    period: "Mar 2023 – Present",
+    period: "Jan 2024 - Present",
     bullets: [
       "Developed and maintained web and mobile applications using ReactJS (Next.js), and ReactNative.",
-      "Developed [AI Chat](https://simplamo.com/features/ai-chat) and [AI Assistant](https://simplamo.com/features/ai-assistant) features.",
-      "Developed Whiteboards with real-time collaboration.",
-      "Built and maintained the Zalo Mini App for Simplamo with seamless integration.",
-      "Developed interactive chart and analytics widgets for the Dashboard to enhance data visualization.",
-      "Developed and maintained core features to enhance functionality and user experience.",
-      "Ensured UI/UX consistency and adherence to standards.",
-      "Implemented robust frontend solutions for web and mobile platforms.",
-      "Analyzed technical capabilities and provided optimal solutions.",
+      "Built and maintained backend services with NestJS in a microservices architecture, working with MongoDB, RabbitMQ, and RESTful APIs.",
+      "Built a [Calendar](https://help.simplamo.com/releases/2024/v2.6/#1-simplamo-calendar) feature with Google Calendar integration for event scheduling and synchronization.",
+      "Developed [AI chat](https://help.simplamo.com/features/simplamo-ai/overview) features for mobile applications and [AI assistant](https://help.simplamo.com/features/simplamo-ai/ai-expert/vision-ai) features for web applications.",
+      "Developed statistical widgets for the [Dashboard](https://help.simplamo.com/features/dashboard/overview) to present and analyze data, and implemented [automated email reporting](https://help.simplamo.com/releases/2025/v2.15.2/#b%C3%A1o-c%C3%A1o-dashboard-t%E1%BB%B1-%C4%91%E1%BB%99ng).",
+      "Developed web applications with Next.js, leveraging Server-Side Rendering (SSR) for performance and SEO optimization.",
+      "Implemented automated report generation and email delivery systems using AWS SES for notifications and scheduled reports.",
     ],
   },
   {

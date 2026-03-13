@@ -37,10 +37,9 @@ export default function WorkItem({
     <div className="relative flex gap-4">
       {/* Amber dot */}
       <div className="flex flex-col items-center mt-1.5 shrink-0">
-        <span
-          className="w-2 h-2 rounded-full shrink-0"
-          style={{ backgroundColor: "var(--accent)" }}
-        />
+        <svg width="8" height="8" viewBox="0 0 8 8" className="shrink-0" aria-hidden>
+          <circle cx="4" cy="4" r="4" fill="var(--accent)" />
+        </svg>
       </div>
 
       <div className="pb-8 flex-1 min-w-0">

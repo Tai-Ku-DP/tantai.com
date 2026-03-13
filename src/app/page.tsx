@@ -1,20 +1,18 @@
 import type { Metadata } from "next";
-import { Mail, FileDown, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, FileDown, Phone, MapPin, Clock, Cake, Link as LinkIcon } from "lucide-react";
 import ProfileCover from "@/components/ProfileCover";
 import SkillBadge from "@/components/SkillBadge";
 import WorkItem from "@/components/WorkItem";
+import EducationItem from "@/components/EducationItem";
 import { skills } from "@/data/skills";
 import { workHistory } from "@/data/work";
+import { educationHistory } from "@/data/education";
 
 export const metadata: Metadata = {
   title: "Tấn Tài - Fullstack Engineer",
   description:
     "Phan Tấn Tài — Fullstack engineer with 3+ years of experience building modern web and mobile applications.",
 };
-
-function SectionLabel({ children }: { children: React.ReactNode }) {
-  return <p className="uppercase font-medium mb-4">{children}</p>;
-}
 
 function Divider() {
   return <div className="my-4 border-t border-gray-200" />;
@@ -82,58 +80,7 @@ export default function HomePage() {
         style={{ color: "var(--muted)" }}
       >
         <p>A full-stack engineer based in Việt Nam 🇻🇳</p>
-        <p>
-          I specialize in web and mobile apps with{" "}
-          <span
-            className="inline-flex items-center gap-1 px-1 py-0.5 rounded text-xs font-medium"
-            style={{
-              border: "1px solid #149eca",
-            }}
-          >
-            {/* React logo SVG */}
-            <svg
-              width="12"
-              height="12"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <circle cx="12" cy="12" r="2.5" fill="#61dafb" />
-              <ellipse
-                cx="12"
-                cy="12"
-                rx="10"
-                ry="4"
-                stroke="#61dafb"
-                strokeWidth="1.5"
-                fill="none"
-              />
-              <ellipse
-                cx="12"
-                cy="12"
-                rx="10"
-                ry="4"
-                stroke="#61dafb"
-                strokeWidth="1.5"
-                fill="none"
-                transform="rotate(60 12 12)"
-              />
-              <ellipse
-                cx="12"
-                cy="12"
-                rx="10"
-                ry="4"
-                stroke="#61dafb"
-                strokeWidth="1.5"
-                fill="none"
-                transform="rotate(120 12 12)"
-              />
-            </svg>
-            React
-          </span>{" "}
-          ecosystem.
-        </p>
+        <p>I build modern web and mobile applications.</p>
         <p>
           If you need a reliable developer to build your product, I&apos;m here
           to help.
@@ -157,6 +104,12 @@ export default function HomePage() {
             icon={<Mail size={14} />}
             label="tantai.development@gmail.com"
             href="mailto:tantai.development@gmail.com"
+          />
+          <InfoRow icon={<Cake size={14} />} label="01/06/2004" />
+          <InfoRow
+            icon={<LinkIcon size={14} />}
+            label="tantai.com"
+            href="https://tantai.com"
           />
         </div>
       </div>
@@ -193,19 +146,17 @@ export default function HomePage() {
 
       <Divider />
 
-      {/* ── Get in touch ─────────────────────────────── */}
-      <section className="pb-4">
-        <SectionLabel>Get in touch</SectionLabel>
-        <p className="text-sm font-mono mb-1" style={{ color: "var(--muted)" }}>
-          You can reach me anytime at{" "}
-          <a
-            href="mailto:hello@phantantai.com"
-            className="underline underline-offset-2 transition-opacity hover:opacity-70"
-            style={{ color: "var(--fg)" }}
-          >
-            hello@phantantai.com
-          </a>
-        </p>
+      {/* ── Education ─────────────────────────────── */}
+      <section>
+        <h1 className="text-xl font-bold mb-3" style={{ color: "var(--fg)" }}>
+          Education
+        </h1>
+
+        <div>
+          {educationHistory.map((entry, i) => (
+            <EducationItem key={i} {...entry} />
+          ))}
+        </div>
       </section>
     </div>
   );

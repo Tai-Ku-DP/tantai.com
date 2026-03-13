@@ -130,7 +130,8 @@ export const skills: Skill[] = [
   },
   {
     name: "Cursor",
-    icon: null,
+    icon: "/icons/cursor.svg",
+    darkInvert: true,
     href: "https://www.cursor.com",
   },
 ];

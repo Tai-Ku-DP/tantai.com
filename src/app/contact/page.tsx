@@ -1,10 +1,4 @@
-import type { Metadata } from "next";
 import { Github, Twitter, Mail, MapPin } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "Contact — // PTT",
-  description: "Get in touch with me.",
-};
 
 export default function ContactPage() {
   return (
