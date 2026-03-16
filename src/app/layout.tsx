@@ -23,12 +23,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Phan Tấn Tài — Fullstack Engineer",
     description:
-      "Full-stack engineer with 3+ years of experience building modern web and mobile applications.",
+      "Full-stack engineer with 2.5+ years of experience building modern web and mobile applications.",
     url: "https://tantai-developer.vercel.app",
     siteName: "Phan Tấn Tài",
     images: [
       {
-        url: "https://tantai-developer.vercel.app/og-image.png",
+        url: "https://tantai-developer.vercel.app/og-image-new.png",
         width: 1200,
         height: 630,
         alt: "Phan Tấn Tài — Fullstack Engineer",
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Phan Tấn Tài — Fullstack Engineer",
     description:
-      "Full-stack engineer with 3+ years of experience building modern web and mobile applications.",
-    images: ["https://tantai-developer.vercel.app/og-image.png"],
+      "Full-stack engineer with 2.5+ years of experience building modern web and mobile applications.",
+    images: ["https://tantai-developer.vercel.app/og-image-new.png"],
   },
 };
 

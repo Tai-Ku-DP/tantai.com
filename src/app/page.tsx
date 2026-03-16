@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import {
   Mail,
-  FileDown,
   Phone,
   MapPin,
-  Clock,
   Cake,
   Link as LinkIcon,
+  Github,
 } from "lucide-react";
 import ProfileCover from "@/components/ProfileCover";
 import SkillBadge from "@/components/SkillBadge";
@@ -15,15 +14,15 @@ import EducationItem from "@/components/EducationItem";
 import { skills } from "@/data/skills";
 import { workHistory } from "@/data/work";
 import { educationHistory } from "@/data/education";
+import { PERSONAL_INFO } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Tấn Tài - Fullstack Engineer",
-  description:
-    "Phan Tấn Tài — Fullstack engineer with 3+ years of experience building modern web and mobile applications.",
+  title: `${PERSONAL_INFO.fullName} - ${PERSONAL_INFO.position}`,
+  description: `${PERSONAL_INFO.fullName} — ${PERSONAL_INFO.position} with 2.5+ years of experience building modern web and mobile applications.`,
 };
 
 function Divider() {
-  return <div className="my-4 border-t border-gray-200" />;
+  return <div className="my-5 border-t border-gray-200" />;
 }
 
 function InfoRow({
@@ -71,53 +70,56 @@ export default function HomePage() {
     <div className="max-w-2xl mx-auto px-6 py-6">
       {/* ── Cover + Avatar ───────────────────────────── */}
       <ProfileCover
-        avatarSrc="/avatar.jpg"
+        avatarSrc="/avatar-sport.jpg"
         avatarInitials="PTT"
-        avatarSize={100}
+        avatarSize={108}
       />
 
       <h1 className="text-xl font-bold mb-3" style={{ color: "var(--fg)" }}>
         Hey, I&apos;m{" "}
         <span className="text-(--accent) border-b-2 border-(--accent) pb-[2px]">
-          Phan Tấn Tài
+          {PERSONAL_INFO.fullName}
         </span>
       </h1>
 
-      <div
-        className="font-mono text-sm space-y-1 mb-6"
+      <p
+        className="font-mono text-sm leading-relaxed mb-4"
         style={{ color: "var(--muted)" }}
       >
-        <p>A full-stack engineer based in Việt Nam 🇻🇳</p>
-        <p>I build modern web and mobile applications.</p>
-        <p>
-          If you need a reliable developer to build your product, I&apos;m here
-          to help.
-        </p>
-      </div>
+        Full-stack engineer with 2.5+ years of production experience at Simplamo
+        Vietnam, shipping features across React / Next.js, React Native, and
+        NestJS microservices. I build things that perform — from AI-powered
+        assistants to automated reporting pipelines — and I obsess over the gap
+        between code that works and code that actually scales.
+      </p>
 
       {/* ── Info Grid ─────────────────────────────── */}
       <div className="rounded-lg  mb-4 font-mono text-xs">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
-          <InfoRow
-            icon={<MapPin size={14} />}
-            label="Ho Chi Minh City, Viet Nam"
-          />
-          <InfoRow icon={<Clock size={14} />} label="GMT+7" />
+          <InfoRow icon={<MapPin size={14} />} label={PERSONAL_INFO.location} />
           <InfoRow
             icon={<Phone size={14} />}
-            label="+84 338168704"
-            href="tel:+84123456789"
+            label={PERSONAL_INFO.phone.label}
+            href={PERSONAL_INFO.phone.href}
           />
           <InfoRow
             icon={<Mail size={14} />}
-            label="tantai.development@gmail.com"
-            href="mailto:tantai.development@gmail.com"
+            label={PERSONAL_INFO.email.label}
+            href={PERSONAL_INFO.email.href}
           />
-          <InfoRow icon={<Cake size={14} />} label="01/06/2004" />
+          <InfoRow
+            icon={<Cake size={14} />}
+            label={PERSONAL_INFO.dateOfBirth}
+          />
           <InfoRow
             icon={<LinkIcon size={14} />}
-            label="tantai-developer.vercel.app"
-            href="https://tantai-developer.vercel.app/"
+            label={PERSONAL_INFO.website.label}
+            href={PERSONAL_INFO.website.href}
+          />
+          <InfoRow
+            icon={<Github size={14} />}
+            label={PERSONAL_INFO.github.label}
+            href={PERSONAL_INFO.github.href}
           />
         </div>
       </div>
@@ -130,10 +132,37 @@ export default function HomePage() {
           Stack
         </h1>
 
-        <div className="flex flex-wrap gap-2">
-          {skills.map((skill) => (
-            <SkillBadge key={skill.name} {...skill} />
-          ))}
+        <div className="space-y-3">
+          <div>
+            <p
+              className="text-xs tracking-[0.08em] uppercase font-semibold mb-2"
+              style={{ color: "var(--muted)" }}
+            >
+              Proficient
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {skills
+                .filter((s) => s.level === "proficient")
+                .map((skill) => (
+                  <SkillBadge key={skill.name} {...skill} />
+                ))}
+            </div>
+          </div>
+          <div>
+            <p
+              className="text-xs tracking-[0.08em] uppercase font-semibold mb-2"
+              style={{ color: "var(--muted)" }}
+            >
+              Familiar
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {skills
+                .filter((s) => s.level === "familiar")
+                .map((skill) => (
+                  <SkillBadge key={skill.name} {...skill} />
+                ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -147,7 +176,11 @@ export default function HomePage() {
 
         <div>
           {workHistory.map((entry, i) => (
-            <WorkItem key={i} {...entry} />
+            <WorkItem
+              key={i}
+              {...entry}
+              isLast={i === workHistory.length - 1}
+            />
           ))}
         </div>
       </section>

@@ -32,17 +32,24 @@ export default function WorkItem({
   type,
   period,
   bullets,
-}: WorkEntry) {
+  isLast,
+}: WorkEntry & { isLast: boolean }) {
   return (
     <div className="relative flex gap-4">
       {/* Amber dot */}
       <div className="flex flex-col items-center mt-1.5 shrink-0">
-        <svg width="8" height="8" viewBox="0 0 8 8" className="shrink-0" aria-hidden>
+        <svg
+          width="8"
+          height="8"
+          viewBox="0 0 8 8"
+          className="shrink-0"
+          aria-hidden
+        >
           <circle cx="4" cy="4" r="4" fill="var(--accent)" />
         </svg>
       </div>
 
-      <div className="pb-8 flex-1 min-w-0">
+      <div className={`flex-1 min-w-0 ${isLast ? "mb-0" : "mb-4"}`}>
         {/* Title */}
         <h3
           className="text-base font-semibold leading-snug"
