@@ -17,15 +17,15 @@ export const PERSONAL_INFO = {
     href: "https://tantai-developer.vercel.app",
   },
   github: {
-    label: "github.com/phantantai",
-    href: "https://github.com/phantantai",
+    label: "github.com/Tai-Ku-DP",
+    href: "https://github.com/Tai-Ku-DP",
   },
   linkedin: {
     label: "linkedin.com/in/phantantai",
-    href: "https://linkedin.com/in/phantantai",
+    href: "http://linkedin.com/in/tan-tai-phan-4517672a2/",
   },
   twitter: {
-    label: "twitter.com/tantai",
-    href: "https://twitter.com/tantai",
+    label: "x.com/taidevelopment",
+    href: "https://x.com/taidevelopment",
   },
 };

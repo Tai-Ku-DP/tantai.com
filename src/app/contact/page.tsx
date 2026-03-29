@@ -26,8 +26,8 @@ export default function ContactPage() {
           {
             icon: <Github size={14} />,
             label: "GitHub",
-            value: "github.com/phantantai",
-            href: "https://github.com",
+            value: "github.com/Tai-Ku-DP",
+            href: "https://github.com/Tai-Ku-DP",
           },
           {
             icon: <Twitter size={14} />,
