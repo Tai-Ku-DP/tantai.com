@@ -28,4 +28,9 @@ export const PERSONAL_INFO = {
     label: "x.com/taidevelopment",
     href: "https://x.com/taidevelopment",
   },
+  cv: {
+    label: "Download CV",
+    href: "/Phan-Tan-Tai-CV.pdf",
+    fileName: "Phan-Tan-Tai-CV.pdf",
+  },
 };

@@ -54,6 +54,12 @@ export const skills: Skill[] = [
     level: "proficient",
   },
   {
+    name: "MySQL",
+    icon: `${D}/mysql/mysql-original.svg`,
+    href: "https://www.mysql.com",
+    level: "proficient",
+  },
+  {
     name: "Tailwind",
     icon: `${D}/tailwindcss/tailwindcss-original.svg`,
     href: "https://tailwindcss.com",
@@ -134,6 +140,18 @@ export const skills: Skill[] = [
     name: "Redis",
     icon: `${D}/redis/redis-original.svg`,
     href: "https://redis.io",
+    level: "familiar",
+  },
+  {
+    name: "LangChain",
+    icon: "/icons/langchain.svg",
+    href: "https://www.langchain.com",
+    level: "familiar",
+  },
+  {
+    name: "LangGraph",
+    icon: "/icons/langgraph.svg",
+    href: "https://www.langchain.com/langgraph",
     level: "familiar",
   },
   {

@@ -8,6 +8,7 @@ import {
   Github,
 } from "lucide-react";
 import ProfileCover from "@/components/ProfileCover";
+import DownloadCvButton from "@/components/DownloadCvButton";
 import SkillBadge from "@/components/SkillBadge";
 import WorkItem from "@/components/WorkItem";
 import EducationItem from "@/components/EducationItem";
@@ -75,12 +76,16 @@ export default function HomePage() {
         avatarSize={108}
       />
 
-      <h1 className="text-xl font-bold mb-3" style={{ color: "var(--fg)" }}>
-        Hey, I&apos;m{" "}
-        <span className="text-(--accent) border-b-2 border-(--accent) pb-[2px]">
-          {PERSONAL_INFO.fullName}
-        </span>
-      </h1>
+      <div className="flex items-center mb-3 gap-4">
+        <h1 className="text-xl font-bold" style={{ color: "var(--fg)" }}>
+          Hey, I&apos;m{" "}
+          <span className="text-(--accent) border-b-2 border-(--accent) pb-[2px]">
+            {PERSONAL_INFO.fullName}
+          </span>
+        </h1>
+
+        <DownloadCvButton />
+      </div>
 
       <p
         className="font-mono text-sm leading-relaxed mb-4"
