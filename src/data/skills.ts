@@ -186,4 +186,10 @@ export const skills: Skill[] = [
     href: "https://www.cursor.com",
     level: "familiar",
   },
+  {
+    name: "Python",
+    icon: `${D}/python/python-original.svg`,
+    href: "https://www.python.org",
+    level: "familiar",
+  },
 ];
