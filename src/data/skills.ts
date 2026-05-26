@@ -11,6 +11,18 @@ const D = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons";
 export const skills: Skill[] = [
   // Proficient
   {
+    name: "TypeScript",
+    icon: `${D}/typescript/typescript-original.svg`,
+    href: "https://www.typescriptlang.org",
+    level: "proficient",
+  },
+  {
+    name: "JavaScript",
+    icon: `${D}/javascript/javascript-original.svg`,
+    href: "https://developer.mozilla.org/docs/Web/JavaScript",
+    level: "proficient",
+  },
+  {
     name: "Next.js",
     icon: `${D}/nextjs/nextjs-original.svg`,
     darkInvert: true,
@@ -30,21 +42,15 @@ export const skills: Skill[] = [
     level: "proficient",
   },
   {
-    name: "TypeScript",
-    icon: `${D}/typescript/typescript-original.svg`,
-    href: "https://www.typescriptlang.org",
-    level: "proficient",
-  },
-  {
-    name: "JavaScript",
-    icon: `${D}/javascript/javascript-original.svg`,
-    href: "https://developer.mozilla.org/docs/Web/JavaScript",
-    level: "proficient",
-  },
-  {
     name: "NestJS",
     icon: "/icons/nestjs.svg",
     href: "https://nestjs.com",
+    level: "proficient",
+  },
+  {
+    name: "Node.js",
+    icon: `${D}/nodejs/nodejs-original.svg`,
+    href: "https://nodejs.org",
     level: "proficient",
   },
   {
@@ -78,12 +84,6 @@ export const skills: Skill[] = [
     level: "proficient",
   },
   {
-    name: "Node",
-    icon: `${D}/nodejs/nodejs-original.svg`,
-    href: "https://nodejs.org",
-    level: "proficient",
-  },
-  {
     name: "Git",
     icon: `${D}/git/git-original.svg`,
     href: "https://git-scm.com",
@@ -91,49 +91,15 @@ export const skills: Skill[] = [
   },
   // Familiar
   {
-    name: "Redux",
-    icon: `${D}/redux/redux-original.svg`,
-    href: "https://redux.js.org",
-    level: "familiar",
-  },
-  {
-    name: "shadcn/ui",
-    icon: "/icons/shadcnui.svg",
-    darkInvert: true,
-    href: "https://ui.shadcn.com",
-    level: "familiar",
-  },
-  {
-    name: "Radix",
-    icon: "/icons/radixui.svg",
-    darkInvert: true,
-    href: "https://www.radix-ui.com",
+    name: "Python",
+    icon: `${D}/python/python-original.svg`,
+    href: "https://www.python.org",
     level: "familiar",
   },
   {
     name: "RabbitMQ",
     icon: `${D}/rabbitmq/rabbitmq-original.svg`,
     href: "https://www.rabbitmq.com",
-    level: "familiar",
-  },
-  {
-    name: "Socket.io",
-    icon: `${D}/socketio/socketio-original.svg`,
-    darkInvert: true,
-    href: "https://socket.io",
-    level: "familiar",
-  },
-  {
-    name: "Puppeteer",
-    icon: "/icons/puppeteer.svg",
-    href: "https://pptr.dev",
-    level: "familiar",
-  },
-  {
-    name: "Cypress",
-    icon: `${D}/cypressio/cypressio-original.svg`,
-    darkInvert: true,
-    href: "https://www.cypress.io",
     level: "familiar",
   },
   {
@@ -161,10 +127,50 @@ export const skills: Skill[] = [
     level: "familiar",
   },
   {
+    name: "Socket.io",
+    icon: `${D}/socketio/socketio-original.svg`,
+    darkInvert: true,
+    href: "https://socket.io",
+    level: "familiar",
+  },
+  {
+    name: "Puppeteer",
+    icon: "/icons/puppeteer.svg",
+    href: "https://pptr.dev",
+    level: "familiar",
+  },
+  {
+    name: "Cypress",
+    icon: `${D}/cypressio/cypressio-original.svg`,
+    darkInvert: true,
+    href: "https://www.cypress.io",
+    level: "familiar",
+  },
+  {
     name: "GitHub",
     icon: `${D}/github/github-original.svg`,
     darkInvert: true,
     href: "https://github.com",
+    level: "familiar",
+  },
+  {
+    name: "Redux",
+    icon: `${D}/redux/redux-original.svg`,
+    href: "https://redux.js.org",
+    level: "familiar",
+  },
+  {
+    name: "shadcn/ui",
+    icon: "/icons/shadcnui.svg",
+    darkInvert: true,
+    href: "https://ui.shadcn.com",
+    level: "familiar",
+  },
+  {
+    name: "Radix",
+    icon: "/icons/radixui.svg",
+    darkInvert: true,
+    href: "https://www.radix-ui.com",
     level: "familiar",
   },
   {
@@ -184,12 +190,6 @@ export const skills: Skill[] = [
     icon: "/icons/cursor.svg",
     darkInvert: true,
     href: "https://www.cursor.com",
-    level: "familiar",
-  },
-  {
-    name: "Python",
-    icon: `${D}/python/python-original.svg`,
-    href: "https://www.python.org",
     level: "familiar",
   },
 ];

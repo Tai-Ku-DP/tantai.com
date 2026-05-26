@@ -30,7 +30,7 @@ export const PERSONAL_INFO = {
   },
   cv: {
     label: "Download CV",
-    href: "/Phan-Tan-Tai-CV.pdf",
-    fileName: "Phan-Tan-Tai-CV.pdf",
+    href: "/Phan_Tan_Tai-Fullstack_Engineer.pdf",
+    fileName: "Phan_Tan_Tai-Fullstack_Engineer.pdf",
   },
 };
